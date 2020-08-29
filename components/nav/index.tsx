@@ -4,7 +4,7 @@ import Link from "next/link";
 import styles from "./nav.module.scss";
 
 export const Nav: React.FC = () => (
-  <nav className={`${styles["nav-menu"]} d-none d-lg-block`}>
+  <nav className={`${styles["nav-menu"]} d-lg-block`}>
     <ul>
       <li className="active">
         <Link href="/">

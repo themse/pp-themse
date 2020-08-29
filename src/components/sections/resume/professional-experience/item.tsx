@@ -46,8 +46,10 @@ export const ProfessionalExperienceItem: React.FC<ProfessionalExperienceItemProp
             <div className="mt-2">
               <p className="mb-0 font-weight-bold">Responsibilities:</p>
               <ul>
-                {project.responsibilities.map((resp) => (
-                  <li className="pb-0">{resp}</li>
+                {project.responsibilities.map((resp, idx) => (
+                  <li key={`responsibility-${idx}`} className="pb-0">
+                    {resp}
+                  </li>
                 ))}
               </ul>
             </div>

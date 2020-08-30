@@ -61,6 +61,16 @@ export const skillsList = [
     title: "Apollo",
   },
   {
+    href: "https://www.elastic.co/",
+    img: "/img/skills/elastic.svg",
+    title: "Elasticsearch",
+  },
+  {
+    href: "https://firebase.google.com/",
+    img: "/img/skills/firebase.png",
+    title: "Firebase",
+  },
+  {
     href: "https://webpack.js.org/",
     img: "/img/skills/webpack.png",
     title: "Webpack",

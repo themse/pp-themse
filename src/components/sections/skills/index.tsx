@@ -16,7 +16,7 @@ export const Skills: React.FC = () => {
           </p>
         </div>
 
-        <div className="row d-flex justify-content-between">
+        <div className="row d-flex justify-content-center">
           {skillsList.map(({ href, title, img }) => (
             <div key={title} className="col-lg-2 mb-3">
               <a href={href} target="_blank">

@@ -1,3 +1,3 @@
-import { FrontPage } from "../container/front-page";
+import { FrontPage } from "../containers/front-page";
 
 export default FrontPage;

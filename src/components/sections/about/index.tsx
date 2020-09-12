@@ -10,7 +10,7 @@ export const About = () => {
           </div>
           <div className="col-lg-8 pt-4 pt-lg-0 content">
             <h3>NodeJS / JS Developer</h3>
-            <p className="font-italic">
+            <p className="font-italic d-none">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
@@ -36,7 +36,10 @@ export const About = () => {
                 <ul>
                   <li>
                     <i className="icofont-rounded-right" />{" "}
-                    <strong>Email:</strong> email@example.com
+                    <strong>Email:</strong>{" "}
+                    <a href="mailto:den.polus.47@gmail.com">
+                      den.polus.47@gmail.com
+                    </a>
                   </li>
                   <li>
                     <i className="icofont-rounded-right" />{" "}
@@ -48,7 +51,7 @@ export const About = () => {
                 </ul>
               </div>
             </div>
-            <p>
+            <p className="d-none">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid,
               molestias reprehenderit, expedita provident quisquam pariatur
               distinctio ipsa libero dolores quae delectus iure perspiciatis

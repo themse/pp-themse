@@ -11,7 +11,7 @@ export const ResumePage: React.FC = () => {
         <div className="container" data-aos="fade-up">
           <div className="section-title">
             <h2>Resume</h2>
-            <p>
+            <p className="d-none">
               Magnam dolores commodi suscipit. Necessitatibus eius consequatur
               ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam
               quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.

@@ -8,7 +8,7 @@ export const Skills: React.FC = () => {
       <div className="container" data-aos="fade-up">
         <div className="section-title">
           <h2>Skills</h2>
-          <p>
+          <p className="d-none">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia eum
             totam animi, quas, veniam pariatur blanditiis, dignissimos velit
             quibusdam saepe distinctio? Autem possimus deserunt doloremque modi

@@ -1,3 +1,3 @@
-import { ResumePage } from "../container/resume-page";
+import { ResumePage } from "../containers/resume-page";
 
 export default ResumePage;

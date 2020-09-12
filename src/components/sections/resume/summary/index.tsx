@@ -14,8 +14,15 @@ export const Summary: React.FC = () => {
         </p>
         <ul>
           <li>Kyiv, Ukraine</li>
-          <li>(000) 00-0000</li>
-          <li>demo@example.com</li>
+          <li>
+            <a target="_blank" href="https://github.com/themse">
+              github
+            </a>
+          </li>
+          <li className="d-none">(000) 00-0000</li>
+          <li>
+            <a href="mailto:den.polus.47@gmail.com">den.polus.47@gmail.com</a>
+          </li>
         </ul>
       </div>
     </>

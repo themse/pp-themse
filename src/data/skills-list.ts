@@ -1,4 +1,6 @@
-export const skillsList = [
+import { SkillType } from "../components/sections/skills";
+
+const skillsList: SkillType[] = [
   {
     href: "https://reactjs.org/",
     img: "/img/skills/reactjs.png",
@@ -101,3 +103,5 @@ export const skillsList = [
     title: "Github",
   },
 ];
+
+module.exports = skillsList;

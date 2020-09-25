@@ -1,3 +1,32 @@
-import { ResumePage } from "../containers/resume-page";
+import React from "react";
+import { GetStaticProps } from "next";
 
-export default ResumePage;
+import { ResumePage } from "../containers/resume-page";
+import { ProfessionalExperienceItemProps } from "../components/sections/resume/professional-experience/item";
+
+export type ResumePageType = {
+  profExpList?: ProfessionalExperienceItemProps[];
+};
+
+const Page: React.FC<ResumePageType> = (props: ResumePageType) => (
+  <ResumePage {...props} />
+);
+
+export const getStaticProps: GetStaticProps<ResumePageType> = async () => {
+  const props: ResumePageType = {};
+
+  try {
+    const res = await fetch(
+      "http://localhost:3000/api/section/professional-experience"
+    );
+    const { data: profExpList } = await res.json();
+    props.profExpList = profExpList;
+  } catch (error) {
+    console.error(error.message);
+  }
+  return {
+    props,
+  };
+};
+
+export default Page;

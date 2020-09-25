@@ -3,8 +3,9 @@ import { BasicLayout } from "../components/layouts/basic";
 import { Summary } from "../components/sections/resume/summary";
 import { ProfessionalExperience } from "../components/sections/resume/professional-experience";
 import { Accomplishments } from "../components/sections/resume/accomplishments";
+import { ResumePageType } from "../pages/resume";
 
-export const ResumePage: React.FC = () => {
+export const ResumePage: React.FC<ResumePageType> = ({ profExpList = [] }) => {
   return (
     <BasicLayout title="Resume">
       <section id="resume" className="resume">
@@ -25,7 +26,7 @@ export const ResumePage: React.FC = () => {
               <Accomplishments />
             </div>
             <div className="col-lg-6">
-              <ProfessionalExperience />
+              <ProfessionalExperience list={profExpList} />
             </div>
           </div>
         </div>

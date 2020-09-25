@@ -1,6 +1,6 @@
-import { ProfessionalExperienceItemProps } from "./item";
+import { ProfessionalExperienceItemProps } from "../components/sections/resume/professional-experience/item";
 
-export const professionalExperienceList: ProfessionalExperienceItemProps[] = [
+const professionalExperienceList: ProfessionalExperienceItemProps[] = [
   {
     position: "Fullstack JS Developer",
     company: {
@@ -239,3 +239,5 @@ export const professionalExperienceList: ProfessionalExperienceItemProps[] = [
     to: "Apr 2016",
   },
 ];
+
+module.exports = professionalExperienceList;

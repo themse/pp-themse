@@ -1,8 +1,17 @@
 import React from "react";
 import { SkillItem } from "./item";
-import { skillsList } from "./list";
 
-export const Skills: React.FC = () => {
+export type SkillType = {
+  href: string;
+  img: string;
+  title: string;
+};
+
+type SkillsProps = {
+  list?: SkillType[];
+};
+
+export const Skills: React.FC<SkillsProps> = ({ list }) => {
   return (
     <section id="skills" className="skills">
       <div className="container" data-aos="fade-up">
@@ -17,7 +26,7 @@ export const Skills: React.FC = () => {
         </div>
 
         <div className="row d-flex justify-content-center">
-          {skillsList.map(({ href, title, img }) => (
+          {list?.map(({ href, title, img }) => (
             <div key={title} className="col-lg-2 mb-3">
               <a href={href} target="_blank">
                 <SkillItem img={img} title={title} />

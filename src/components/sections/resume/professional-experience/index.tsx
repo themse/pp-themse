@@ -1,21 +1,27 @@
 import React from "react";
-import { ProfessionalExperienceItem } from "./item";
-import { professionalExperienceList } from "./list";
+import {
+  ProfessionalExperienceItem,
+  ProfessionalExperienceItemProps,
+} from "./item";
 
-export const ProfessionalExperience: React.FC = () => {
-  return (
-    <>
-      <h3 className="resume-title">Professional Experience</h3>
-      {professionalExperienceList.map((item) => (
-        <ProfessionalExperienceItem
-          key={item.company.title}
-          position={item.position}
-          projects={item.projects}
-          company={item.company}
-          from={item.from}
-          to={item.to}
-        />
-      ))}
-    </>
-  );
+type ProfessionalExperienceProps = {
+  list?: ProfessionalExperienceItemProps[];
 };
+
+export const ProfessionalExperience: React.FC<ProfessionalExperienceProps> = ({
+  list,
+}) => (
+  <>
+    <h3 className="resume-title">Professional Experience</h3>
+    {list?.map((item) => (
+      <ProfessionalExperienceItem
+        key={item.company.title}
+        position={item.position}
+        projects={item.projects}
+        company={item.company}
+        from={item.from}
+        to={item.to}
+      />
+    ))}
+  </>
+);

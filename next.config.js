@@ -7,8 +7,12 @@ const nextConfig = {
   webpack: {
     // webpack config properties
   },
-  env: {
-    // environment
+  serverRuntimeConfig: {
+    // Will only be available on the server side
+  },
+  publicRuntimeConfig: {
+    // Will be available on both server and client
+    APP_URL: process.env.APP_URL,
   },
 };
 module.exports = withPlugins([withBundleAnalyzer], nextConfig);

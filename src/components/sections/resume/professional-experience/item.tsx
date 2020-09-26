@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import { Company, Project } from "./types";
+import { Company, Project } from './types';
 
 export type ProfessionalExperienceItemProps = {
   company: Company;
@@ -41,7 +41,7 @@ export const ProfessionalExperienceItem: React.FC<ProfessionalExperienceItemProp
               <br />
             </>
           )}
-          <span className="text-muted">{project.technologies.join(", ")}</span>
+          <span className="text-muted">{project.technologies.join(', ')}</span>
           {project.responsibilities.length > 0 && (
             <div className="mt-2">
               <p className="mb-0 font-weight-bold">Responsibilities:</p>

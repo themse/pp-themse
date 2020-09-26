@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export const About = () => {
   return (
@@ -18,16 +18,16 @@ export const About = () => {
               <div className="col-lg-6">
                 <ul>
                   <li>
-                    <i className="icofont-rounded-right" />{" "}
+                    <i className="icofont-rounded-right" />{' '}
                     <strong>Name:</strong> Denis Polusmyak
                   </li>
                   <li>
-                    <i className="icofont-rounded-right" />{" "}
+                    <i className="icofont-rounded-right" />{' '}
                     <strong>Birthday:</strong> 4 May 1992
                   </li>
 
                   <li>
-                    <i className="icofont-rounded-right" />{" "}
+                    <i className="icofont-rounded-right" />{' '}
                     <strong>City:</strong> Kyiv, Ukraine
                   </li>
                 </ul>
@@ -35,15 +35,15 @@ export const About = () => {
               <div className="col-lg-6">
                 <ul>
                   <li>
-                    <i className="icofont-rounded-right" />{" "}
-                    <strong>Email:</strong>{" "}
+                    <i className="icofont-rounded-right" />{' '}
+                    <strong>Email:</strong>{' '}
                     <a href="mailto:den.polus.47@gmail.com">
                       den.polus.47@gmail.com
                     </a>
                   </li>
                   <li>
-                    <i className="icofont-rounded-right" />{" "}
-                    <strong>Github:</strong>{" "}
+                    <i className="icofont-rounded-right" />{' '}
+                    <strong>Github:</strong>{' '}
                     <a target="_blank" href="https://github.com/themse">
                       themse
                     </a>

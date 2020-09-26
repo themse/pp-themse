@@ -1,9 +1,9 @@
-import React from "react";
-import { GetStaticProps } from "next";
-import getConfig from "next/config";
+import React from 'react';
+import { GetStaticProps } from 'next';
+import getConfig from 'next/config';
 
-import { FrontPage } from "../containers/front-page";
-import { SkillType } from "../components/sections/skills";
+import { FrontPage } from '../containers/front-page';
+import { SkillType } from '../components/sections/skills';
 
 export type FrontPageType = {
   skillsList?: SkillType[];

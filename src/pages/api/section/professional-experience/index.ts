@@ -1,8 +1,8 @@
-import nc from "next-connect";
-import cors from "cors";
-import { NextApiRequest, NextApiResponse } from "next";
+import nc from 'next-connect';
+import cors from 'cors';
+import { NextApiRequest, NextApiResponse } from 'next';
 //@ts-ignore
-import profExpiriences from "../../../../data/professional-experience-list";
+import profExpiriences from '../../../../data/professional-experience-list';
 
 const handler = nc()
   .use(cors())

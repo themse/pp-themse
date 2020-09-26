@@ -1,9 +1,9 @@
-import React from "react";
-import { GetStaticProps } from "next";
-import getConfig from "next/config";
+import React from 'react';
+import { GetStaticProps } from 'next';
+import getConfig from 'next/config';
 
-import { ResumePage } from "../containers/resume-page";
-import { ProfessionalExperienceItemProps } from "../components/sections/resume/professional-experience/item";
+import { ResumePage } from '../containers/resume-page';
+import { ProfessionalExperienceItemProps } from '../components/sections/resume/professional-experience/item';
 
 export type ResumePageType = {
   profExpList?: ProfessionalExperienceItemProps[];

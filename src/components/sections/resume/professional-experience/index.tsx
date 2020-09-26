@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 import {
   ProfessionalExperienceItem,
   ProfessionalExperienceItemProps,
-} from "./item";
+} from './item';
 
 type ProfessionalExperienceProps = {
   list?: ProfessionalExperienceItemProps[];

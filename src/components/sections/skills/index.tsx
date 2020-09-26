@@ -1,5 +1,5 @@
-import React from "react";
-import { SkillItem } from "./item";
+import React from 'react';
+import { SkillItem } from './item';
 
 export type SkillType = {
   href: string;

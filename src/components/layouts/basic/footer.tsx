@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
 export const Footer: React.FC = () => {
   return (
     <footer id="footer">
       <div className="container">
         <div className="copyright">
-          &copy; Copyright{" "}
+          &copy; Copyright{' '}
           <strong>
             <span>Themse</span>
           </strong>

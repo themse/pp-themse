@@ -1,8 +1,12 @@
-import React from "react";
-import Link from "next/link";
-import { Nav } from "../../nav";
+import React from 'react';
+import Link from 'next/link';
+import { Nav } from '../../nav';
 
-export const Header: React.FC = () => {
+type HeaderProps = {
+  auth: any;
+};
+
+export const Header: React.FC<HeaderProps> = ({ auth }) => {
   return (
     <header id="header" className="fixed-top">
       <div className="container d-flex justify-content-between align-items-center">
@@ -12,7 +16,7 @@ export const Header: React.FC = () => {
           </Link>
         </h1>
 
-        <Nav />
+        <Nav auth={auth} />
 
         {/* <div className="header-social-links">
           <a href="#" className="twitter">

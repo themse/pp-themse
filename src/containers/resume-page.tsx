@@ -1,9 +1,9 @@
-import React from "react";
-import { BasicLayout } from "../components/layouts/basic";
-import { Summary } from "../components/sections/resume/summary";
-import { ProfessionalExperience } from "../components/sections/resume/professional-experience";
-import { Accomplishments } from "../components/sections/resume/accomplishments";
-import { ResumePageType } from "../pages/resume";
+import React from 'react';
+import { BasicLayout } from '../components/layouts/basic';
+import { Summary } from '../components/sections/resume/summary';
+import { ProfessionalExperience } from '../components/sections/resume/professional-experience';
+import { Accomplishments } from '../components/sections/resume/accomplishments';
+import { ResumePageType } from '../pages/resume';
 
 export const ResumePage: React.FC<ResumePageType> = ({ profExpList = [] }) => {
   return (

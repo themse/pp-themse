@@ -3,14 +3,14 @@ import { auth, githubAuthProvider } from './firebase';
 
 const AuthContext = createContext({});
 
-export const ProvideAuth: React.FC = ({ children }) => {
-  const auth = useProvideAuth();
+export const AuthProvider: React.FC = ({ children }) => {
+  const auth = useAuthProvider();
   return <AuthContext.Provider value={auth}>{children}</AuthContext.Provider>;
 };
 
 export const useAuth = () => useContext(AuthContext);
 
-function useProvideAuth() {
+function useAuthProvider() {
   const [user, setUser] = useState(null);
 
   const signInWithGithub = () => {

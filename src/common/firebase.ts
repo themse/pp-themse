@@ -7,5 +7,7 @@ if (!firebase.apps.length) {
 
 export default firebase;
 
-export const auth = firebase.auth();
+export type IAuthFirebase = firebase.auth.Auth;
+export type IUserFirebase = firebase.User | null;
+export const auth: IAuthFirebase = firebase.auth();
 export const githubAuthProvider = new firebase.auth.GithubAuthProvider();

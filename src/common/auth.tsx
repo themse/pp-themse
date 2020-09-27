@@ -1,42 +1,41 @@
 import React, { useState, useEffect, useContext, createContext } from 'react';
-import { auth, githubAuthProvider } from './firebase';
+import { auth, githubAuthProvider, IUserFirebase } from './firebase';
+import { IAuth, IUser } from './types';
 
 const AuthContext = createContext({});
 
 export const AuthProvider: React.FC = ({ children }) => {
-  const auth = useAuthProvider();
+  const auth: IAuth = useAuthProvider();
   return <AuthContext.Provider value={auth}>{children}</AuthContext.Provider>;
 };
 
 export const useAuth = () => useContext(AuthContext);
 
 function useAuthProvider() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState<IUser | null>(null);
+
+  const handleUser = (rawUser: IUserFirebase) => {
+    if (rawUser) {
+      const user: IUser = formatUser(rawUser);
+      setUser(user);
+      return user;
+    }
+    setUser(null);
+    return null;
+  };
 
   const signInWithGithub = () => {
-    return auth.signInWithPopup(githubAuthProvider).then((response) => {
-      //@ts-ignore
-      setUser(response.user);
-      return response.user;
-    });
+    return auth
+      .signInWithPopup(githubAuthProvider)
+      .then((response) => handleUser(response.user));
   };
 
   const signOut = () => {
-    return auth.signOut().then(() => {
-      setUser(null);
-    });
+    return auth.signOut().then(() => handleUser(null));
   };
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      if (user) {
-        //@ts-ignore
-        setUser(user);
-      } else {
-        setUser(null);
-      }
-    });
-
+    const unsubscribe = auth.onAuthStateChanged((user) => handleUser(user));
     return () => unsubscribe();
   }, []);
 
@@ -46,3 +45,10 @@ function useAuthProvider() {
     signOut,
   };
 }
+
+const formatUser = (user: any): IUser => ({
+  uid: user.uid,
+  email: user.email,
+  name: user.displayName,
+  photo: user.photoURL,
+});

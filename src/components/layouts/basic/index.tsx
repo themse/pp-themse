@@ -4,6 +4,7 @@ import Head from 'next/head';
 import { Header } from './header';
 import { Footer } from './footer';
 import { useAuth } from '../../../common/auth';
+import { IAuth } from '../../../common/types';
 
 type BasicLayoutProps = {
   title: string;

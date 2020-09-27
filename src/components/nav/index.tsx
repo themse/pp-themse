@@ -2,9 +2,10 @@ import React from 'react';
 import Link from 'next/link';
 
 import styles from './nav.module.scss';
+import { IAuth } from '../../common/types';
 
 type NavProps = {
-  auth?: any;
+  auth?: IAuth;
 };
 
 export const Nav: React.FC<NavProps> = ({ auth = null }) => {
@@ -13,7 +14,7 @@ export const Nav: React.FC<NavProps> = ({ auth = null }) => {
       Sign Out
     </a>
   ) : (
-    <a role="button" onClick={() => auth.signInWithGithub()}>
+    <a role="button" onClick={() => auth?.signInWithGithub()}>
       Sign In
     </a>
   );
@@ -34,12 +35,12 @@ export const Nav: React.FC<NavProps> = ({ auth = null }) => {
         {auth && <li>{authButton}</li>}
         {auth?.user && (
           <li>
-            Hello, <b>{auth.user.displayName}</b>
+            Hello, <b>{auth.user.name}</b>
             <img
               style={{ marginLeft: '5px', width: '25px' }}
               className="avatar rounded-circle"
-              src={auth.user.photoURL}
-              alt={auth.user.displayName}
+              src={auth.user.photo}
+              alt={auth.user.name}
             />
           </li>
         )}

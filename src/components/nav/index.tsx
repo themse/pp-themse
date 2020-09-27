@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { Avatar, Stack } from '@chakra-ui/core';
 
 import styles from './nav.module.scss';
 import { IAuth } from '../../common/types';
@@ -35,13 +36,17 @@ export const Nav: React.FC<NavProps> = ({ auth = null }) => {
         {auth && <li>{authButton}</li>}
         {auth?.user && (
           <li>
-            Hello, <b>{auth.user.name}</b>
-            <img
-              style={{ marginLeft: '5px', width: '25px' }}
-              className="avatar rounded-circle"
-              src={auth.user.photo}
-              alt={auth.user.name}
-            />
+            <Stack isInline>
+              <span>
+                Hello, <b>{auth.user.name}</b>
+              </span>
+              <Avatar
+                ml={2}
+                size="xs"
+                name={auth.user.name}
+                src={auth.user.photo}
+              />
+            </Stack>
           </li>
         )}
       </ul>

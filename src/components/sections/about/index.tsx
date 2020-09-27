@@ -1,4 +1,5 @@
 import React from 'react';
+import { Icon, Stack, Box, Image, Heading, Text } from '@chakra-ui/core';
 
 export const About = () => {
   return (
@@ -6,47 +7,77 @@ export const About = () => {
       <div className="container" data-aos="fade-up">
         <div className="row">
           <div className="col-lg-4">
-            <img src="/img/avatar.jpg" className="img-fluid" alt="" />
+            <Box>
+              <Image
+                src="/img/avatar.jpg"
+                alt="photo"
+                rounded="full"
+                objectFit="cover"
+              />
+            </Box>
           </div>
           <div className="col-lg-8 pt-4 pt-lg-0 content">
-            <h3>NodeJS / JS Developer</h3>
-            <p className="font-italic d-none">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
+            <Box pb={3}>
+              <Heading as="h3" size="lg" color="gray.600">
+                NodeJS / JS Developer
+              </Heading>
+              <Text className="font-italic d-none">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </Text>
+            </Box>
             <div className="row">
               <div className="col-lg-6">
                 <ul>
                   <li>
-                    <i className="icofont-rounded-right" />{' '}
-                    <strong>Name:</strong> Denis Polusmyak
+                    <Stack isInline>
+                      <Icon name="chevron-right" color="teal.300" size="24px" />
+                      <span>
+                        <strong>Name:</strong> Denis Polusmyak
+                      </span>
+                    </Stack>
                   </li>
                   <li>
-                    <i className="icofont-rounded-right" />{' '}
-                    <strong>Birthday:</strong> 4 May 1992
+                    <Stack isInline>
+                      <Icon name="chevron-right" color="teal.300" size="24px" />
+                      <span>
+                        <strong>Birthday:</strong> 4 May 1992
+                      </span>
+                    </Stack>
                   </li>
-
                   <li>
-                    <i className="icofont-rounded-right" />{' '}
-                    <strong>City:</strong> Kyiv, Ukraine
+                    <Stack isInline>
+                      <Icon name="chevron-right" color="teal.300" size="24px" />
+                      <span>
+                        <strong>City:</strong> Kyiv, Ukraine
+                      </span>
+                    </Stack>
                   </li>
                 </ul>
               </div>
               <div className="col-lg-6">
                 <ul>
                   <li>
-                    <i className="icofont-rounded-right" />{' '}
-                    <strong>Email:</strong>{' '}
-                    <a href="mailto:den.polus.47@gmail.com">
-                      den.polus.47@gmail.com
-                    </a>
+                    <Stack isInline>
+                      <Icon name="chevron-right" color="teal.300" size="24px" />
+                      <span>
+                        <strong>Email:</strong>{' '}
+                        <a href="mailto:den.polus.47@gmail.com">
+                          den.polus.47@gmail.com
+                        </a>
+                      </span>
+                    </Stack>
                   </li>
                   <li>
-                    <i className="icofont-rounded-right" />{' '}
-                    <strong>Github:</strong>{' '}
-                    <a target="_blank" href="https://github.com/themse">
-                      themse
-                    </a>
+                    <Stack isInline>
+                      <Icon name="chevron-right" color="teal.300" size="24px" />
+                      <span>
+                        <strong>Github:</strong>{' '}
+                        <a target="_blank" href="https://github.com/themse">
+                          themse
+                        </a>
+                      </span>
+                    </Stack>
                   </li>
                 </ul>
               </div>

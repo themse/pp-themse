@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext, createContext } from 'react';
 import { auth, githubAuthProvider, IUserFirebase } from './firebase';
+import { createUser } from './firestore';
 import { IAuth, IUser } from './types';
 
 const AuthContext = createContext({});
@@ -17,6 +18,8 @@ function useAuthProvider() {
   const handleUser = (rawUser: IUserFirebase) => {
     if (rawUser) {
       const user: IUser = formatUser(rawUser);
+      createUser(user.uid, user);
+
       setUser(user);
       return user;
     }

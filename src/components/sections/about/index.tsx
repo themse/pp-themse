@@ -18,12 +18,11 @@ export const About = () => {
           </div>
           <div className="col-lg-8 pt-4 pt-lg-0 content">
             <Box pb={3}>
-              <Heading as="h3" size="lg" color="gray.600">
+              <Heading as="h3" size="lg" color="gray.600" mb={2}>
                 NodeJS / JS Developer
               </Heading>
-              <Text className="font-italic d-none">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              <Text className="font-italic" mb={2}>
+                May the force be with you
               </Text>
             </Box>
             <div className="row">

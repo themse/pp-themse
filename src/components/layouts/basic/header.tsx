@@ -1,5 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Grid from '@material-ui/core/Grid';
+import Container from '@material-ui/core/Container';
+
 import { Nav } from '../../nav';
 
 type HeaderProps = {
@@ -8,31 +13,21 @@ type HeaderProps = {
 
 export const Header: React.FC<HeaderProps> = ({ auth }) => {
   return (
-    <header id="header" className="fixed-top">
-      <div className="container d-flex justify-content-between align-items-center">
-        <h1 className="logo">
-          <Link href="/">
-            <a>Themse</a>
-          </Link>
-        </h1>
-
-        <Nav auth={auth} />
-
-        {/* <div className="header-social-links">
-          <a href="#" className="twitter">
-            <i className="icofont-twitter" />
-          </a>
-          <a href="#" className="facebook">
-            <i className="icofont-facebook" />
-          </a>
-          <a href="#" className="instagram">
-            <i className="icofont-instagram" />
-          </a>
-          <a href="#" className="linkedin">
-            <i className="icofont-linkedin" />
-          </a>
-        </div> */}
-      </div>
-    </header>
+    <>
+      <AppBar position="fixed">
+        <Toolbar>
+          <Container>
+            <Grid container justify="space-between" alignItems="center">
+              <h1>
+                <Link href="/">
+                  <a>Themse</a>
+                </Link>
+              </h1>
+              <Nav auth={auth} />
+            </Grid>
+          </Container>
+        </Toolbar>
+      </AppBar>
+    </>
   );
 };

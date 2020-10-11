@@ -1,11 +1,11 @@
-import { theme as chakraTheme } from '@chakra-ui/core';
+import { createMuiTheme } from '@material-ui/core/styles';
 
-const theme = {
-  ...chakraTheme,
-  fonts: {
-    ...chakraTheme.fonts,
-    body: `"Open Sans", sans-serif`,
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#e9e8e6',
+    },
   },
-};
+});
 
 export default theme;

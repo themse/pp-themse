@@ -33,7 +33,7 @@ export const Nav: React.FC<NavProps> = ({ auth = null }) => {
             <a>Resume</a>
           </Link>
         </li>
-        {auth && <li>{authButton}</li>}
+        {false && auth && <li>{authButton}</li>}
         {auth?.user && (
           <li>
             <Stack isInline>

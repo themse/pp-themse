@@ -1,27 +1,52 @@
 import React from 'react';
-import {
-  ProfessionalExperienceItem,
-  ProfessionalExperienceItemProps,
-} from './item';
+import useSWR from 'swr';
+import getConfig from 'next/config';
+
+import { ProfessionalExperienceItem, IProfessionalExperience } from './item';
+
+const {
+  publicRuntimeConfig: { APP_URL },
+} = getConfig();
 
 type ProfessionalExperienceProps = {
-  list?: ProfessionalExperienceItemProps[];
+  list?: IProfessionalExperience[];
 };
+
+//@ts-ignore
+const fetcher = (...args) => fetch(...args).then((res) => res.json()); // TODO move to another file
 
 export const ProfessionalExperience: React.FC<ProfessionalExperienceProps> = ({
   list,
-}) => (
-  <>
-    <h3 className="resume-title">Professional Experience</h3>
-    {list?.map((item) => (
-      <ProfessionalExperienceItem
-        key={item.id}
-        position={item.position}
-        projects={item.projects}
-        company={item.company}
-        from={item.from}
-        to={item.to}
-      />
-    ))}
-  </>
-);
+}) => {
+  const { data, error } = useSWR(
+    `${APP_URL}/api/section/professional-experience`,
+    fetcher,
+    {
+      initialData: list,
+    }
+  );
+
+  if (error) {
+    return <div>Something went wrong!</div>;
+  }
+
+  if (!data) {
+    return <div>Loading...</div>;
+  }
+
+  return (
+    <>
+      <h3 className="resume-title">Professional Experience</h3>
+      {data?.map((item: IProfessionalExperience) => (
+        <ProfessionalExperienceItem
+          key={item.id}
+          position={item.position}
+          projects={item.projects}
+          company={item.company}
+          from={item.from}
+          to={item.to}
+        />
+      ))}
+    </>
+  );
+};

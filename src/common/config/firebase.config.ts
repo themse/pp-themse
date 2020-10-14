@@ -2,9 +2,9 @@ import getConfig from 'next/config';
 
 const {
   publicRuntimeConfig: {
-    FIREBASE_API_KEY,
     FIREBASE_AUTH_DOMAIN,
     FIREBASE_PROJECT_ID,
+    FIREBASE_API_KEY,
   },
 } = getConfig();
 

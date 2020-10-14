@@ -2,12 +2,12 @@ import getConfig from 'next/config';
 import { ServiceAccount } from 'firebase-admin';
 
 const {
-  publicRuntimeConfig: {
+  serverRuntimeConfig: {
     FIREBASE_CLIENT_EMAIL,
     FIREBASE_PRIVATE_KEY,
-    FIREBASE_PROJECT_ID,
     FIREBASE_DATABASE_URL,
   },
+  publicRuntimeConfig: { FIREBASE_PROJECT_ID },
 } = getConfig();
 
 type AdminConfig = {

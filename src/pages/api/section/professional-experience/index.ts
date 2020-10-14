@@ -3,7 +3,7 @@ import cors from 'cors';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 import db from '../../../../common/firebase-admin';
-import { ProfessionalExperienceItemProps } from '../../../../components/sections/resume/professional-experience/item';
+import { IProfessionalExperience } from '../../../../components/sections/resume/professional-experience/item';
 
 const handler = nc()
   .use(cors())
@@ -15,11 +15,11 @@ const handler = nc()
       res.status(404).json({ error: 404, message: 'Document not found' });
     }
 
-    const data: ProfessionalExperienceItemProps[] = [];
+    const data: IProfessionalExperience[] = [];
     //@ts-ignore TODO
     snapshot.forEach((doc) => data.push({ id: doc.id, ...doc.data() }));
 
-    res.status(200).json({ data });
+    res.status(200).json(data); // TODO get data from data.professionalExperiences
   });
 
 export default handler;

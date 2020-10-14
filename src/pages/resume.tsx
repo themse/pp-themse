@@ -3,10 +3,10 @@ import { GetStaticProps } from 'next';
 import getConfig from 'next/config';
 
 import { ResumePage } from '../containers/resume-page';
-import { ProfessionalExperienceItemProps } from '../components/sections/resume/professional-experience/item';
+import { IProfessionalExperience } from '../components/sections/resume/professional-experience/item';
 
 export type ResumePageType = {
-  profExpList?: ProfessionalExperienceItemProps[];
+  profExpList?: IProfessionalExperience[];
 };
 
 const {
@@ -22,7 +22,7 @@ export const getStaticProps: GetStaticProps<ResumePageType> = async () => {
 
   try {
     const res = await fetch(`${APP_URL}/api/section/professional-experience`);
-    const { data: profExpList } = await res.json();
+    const profExpList = await res.json();
     props.profExpList = profExpList;
   } catch (error) {
     console.error(error.message);

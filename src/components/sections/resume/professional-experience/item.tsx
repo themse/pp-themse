@@ -2,15 +2,19 @@ import React from 'react';
 
 import { Company, Project } from './types';
 
-export type ProfessionalExperienceItemProps = {
-  // TODO create Entity
+export interface IProfessionalExperience {
   id: string;
   company?: Company;
   position: string;
   projects?: Project[];
   from: string;
   to: string;
-};
+}
+
+export type ProfessionalExperienceItemProps = Omit<
+  IProfessionalExperience,
+  'id'
+>;
 
 export const ProfessionalExperienceItem: React.FC<ProfessionalExperienceItemProps> = ({
   position,

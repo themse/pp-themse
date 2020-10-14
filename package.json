@@ -20,6 +20,7 @@
     "cross-env": "^7.0.2",
     "emotion-theming": "^10.0.27",
     "firebase": "^7.21.1",
+    "firebase-admin": "^9.2.0",
     "next": "9.5.4",
     "next-compose-plugins": "^2.2.0",
     "next-connect": "^0.9.0",

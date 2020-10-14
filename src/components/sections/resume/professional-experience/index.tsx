@@ -15,7 +15,7 @@ export const ProfessionalExperience: React.FC<ProfessionalExperienceProps> = ({
     <h3 className="resume-title">Professional Experience</h3>
     {list?.map((item) => (
       <ProfessionalExperienceItem
-        key={item.company.title}
+        key={item.id}
         position={item.position}
         projects={item.projects}
         company={item.company}

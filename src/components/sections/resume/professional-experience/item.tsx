@@ -3,9 +3,11 @@ import React from 'react';
 import { Company, Project } from './types';
 
 export type ProfessionalExperienceItemProps = {
-  company: Company;
+  // TODO create Entity
+  id: string;
+  company?: Company;
   position: string;
-  projects: Project[];
+  projects?: Project[];
   from: string;
   to: string;
 };
@@ -23,12 +25,15 @@ export const ProfessionalExperienceItem: React.FC<ProfessionalExperienceItemProp
       <h5>
         {from} - {to}
       </h5>
-      <p>
-        <em>
-          <a href={company.href}>{company.title}</a> - {company.description}
-        </em>
-      </p>
-      {projects.map((project) => (
+      {company && (
+        <p>
+          <em>
+            <a href={company.href}>{company.title}</a> - {company.description}
+          </em>
+        </p>
+      )}
+
+      {projects?.map((project) => (
         <div key={project.title}>
           {project.href ? (
             <a href={project.href} target="_blank">

@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "export": "next export",
+    "build": "rimraf .next && next build",
+    "export": "rimraf out && next export",
     "start": "next start",
     "typecheck": "tsc",
     "analyze": "cross-env ANALYZE=true yarn build"
@@ -38,6 +38,7 @@
     "@types/node": "^14.6.1",
     "@types/react": "^16.9.48",
     "@types/react-dom": "^16.9.8",
+    "rimraf": "^3.0.2",
     "sass": "^1.26.10",
     "typescript": "^4.0.2"
   }

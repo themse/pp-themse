@@ -1,5 +1,5 @@
 import React from 'react';
-import { GetStaticProps } from 'next';
+import { GetServerSidePropsContext } from 'next';
 import getConfig from 'next/config';
 
 import { ResumePage } from '../containers/resume-page';
@@ -17,7 +17,7 @@ const Page: React.FC<ResumePageType> = (props: ResumePageType) => (
   <ResumePage {...props} />
 );
 
-export const getStaticProps: GetStaticProps<ResumePageType> = async () => {
+export const getServerSideProps = async (_: GetServerSidePropsContext) => {
   const props: ResumePageType = {};
 
   try {

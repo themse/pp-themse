@@ -15,11 +15,11 @@ const handler = nc()
       res.status(404).json({ error: 404, message: 'Document not found' });
     }
 
-    const data: IProfessionalExperience[] = [];
+    const professionalExperiences: IProfessionalExperience[] = [];
     //@ts-ignore TODO
-    snapshot.forEach((doc) => data.push({ id: doc.id, ...doc.data() }));
+    snapshot.forEach((doc) => professionalExperiences.push({ id: doc.id, ...doc.data() }));
 
-    res.status(200).json(data); // TODO get data from data.professionalExperiences
+    res.status(200).json({ professionalExperiences });
   });
 
 export default handler;

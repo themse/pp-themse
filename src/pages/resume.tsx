@@ -6,7 +6,7 @@ import { ResumePage } from '../containers/resume-page';
 import { IProfessionalExperience } from '../components/sections/resume/professional-experience/item';
 
 export type ResumePageType = {
-  profExpList?: IProfessionalExperience[];
+  professionalExperiences?: IProfessionalExperience[];
 };
 
 const {
@@ -22,8 +22,8 @@ export const getStaticProps: GetStaticProps<ResumePageType> = async () => {
 
   try {
     const res = await fetch(`${APP_URL}/api/section/professional-experience`);
-    const profExpList = await res.json();
-    props.profExpList = profExpList;
+    const { professionalExperiences } = await res.json();
+    props.professionalExperiences = professionalExperiences;
   } catch (error) {
     console.error(error.message);
   }

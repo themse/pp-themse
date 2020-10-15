@@ -22,7 +22,7 @@ export const ProfessionalExperience: React.FC<ProfessionalExperienceProps> = ({
     `${APP_URL}/api/section/professional-experience`,
     fetcher,
     {
-      initialData: list,
+      initialData: { professionalExperiences: list },
     }
   );
 
@@ -33,11 +33,12 @@ export const ProfessionalExperience: React.FC<ProfessionalExperienceProps> = ({
   if (!data) {
     return <div>Loading...</div>;
   }
+  const { professionalExperiences } = data;
 
   return (
     <>
       <h3 className="resume-title">Professional Experience</h3>
-      {data?.map((item: IProfessionalExperience) => (
+      {professionalExperiences.map((item: IProfessionalExperience) => (
         <ProfessionalExperienceItem
           key={item.id}
           position={item.position}

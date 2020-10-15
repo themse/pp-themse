@@ -5,7 +5,7 @@ import { ProfessionalExperience } from '../components/sections/resume/profession
 import { Accomplishments } from '../components/sections/resume/accomplishments';
 import { ResumePageType } from '../pages/resume';
 
-export const ResumePage: React.FC<ResumePageType> = ({ profExpList = [] }) => {
+export const ResumePage: React.FC<ResumePageType> = ({ professionalExperiences = [] }) => {
   return (
     <BasicLayout title="Resume">
       <section id="resume" className="resume">
@@ -26,7 +26,7 @@ export const ResumePage: React.FC<ResumePageType> = ({ profExpList = [] }) => {
               <Accomplishments />
             </div>
             <div className="col-lg-6">
-              <ProfessionalExperience list={profExpList} />
+              <ProfessionalExperience list={professionalExperiences} />
             </div>
           </div>
         </div>

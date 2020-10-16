@@ -32,7 +32,10 @@ export const ProfessionalExperienceItem: React.FC<ProfessionalExperienceItemProp
       {company && (
         <p>
           <em>
-            <a href={company.href}>{company.title}</a> - {company.description}
+            <a href={`https://${company.href}`} target="_blank">
+              {company.title}
+            </a>{' '}
+            - {company.description}
           </em>
         </p>
       )}
@@ -40,7 +43,7 @@ export const ProfessionalExperienceItem: React.FC<ProfessionalExperienceItemProp
       {projects?.map((project) => (
         <div key={project.title}>
           {project.href ? (
-            <a href={project.href} target="_blank">
+            <a href={`https://${project.href}`} target="_blank">
               <b>{project.title}</b>
               <br />
             </a>

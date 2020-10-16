@@ -1,6 +1,7 @@
 import nc from 'next-connect';
 import cors from 'cors';
 import { NextApiRequest, NextApiResponse } from 'next';
+import { compareDesc } from 'date-fns';
 
 import db from '../../../../common/firebase/firebase-admin';
 import { IProfessionalExperience } from '../../../../components/sections/resume/professional-experience/item';
@@ -23,7 +24,12 @@ const handler = nc()
       return professionalExperiences.push({ id: doc.id, ...doc.data() });
     });
 
-    res.status(200).json({ professionalExperiences });
+    // TODO temporary solution
+    res.status(200).json({
+      professionalExperiences: professionalExperiences.sort((a, b) =>
+        compareDesc(new Date(a.from), new Date(b.from))
+      ),
+    });
   });
 
 export default handler;

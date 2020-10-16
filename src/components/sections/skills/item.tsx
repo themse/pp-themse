@@ -1,9 +1,7 @@
 import React from 'react';
+import { ISkill } from './types';
 
-type SkillItemProps = {
-  title: string;
-  img: string;
-};
+type SkillItemProps = Omit<ISkill, 'id' | 'href'>;
 
 export const SkillItem: React.FC<SkillItemProps> = ({ title, img }) => {
   return (

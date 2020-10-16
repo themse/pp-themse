@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext, createContext } from 'react';
-import { auth, githubAuthProvider, IUserFirebase } from './firebase';
-import { createUser } from './firestore';
+import { auth, githubAuthProvider, IUserFirebase } from './firebase/firebase';
+import { createUser } from './firebase/firestore';
 import { IAuth, IUser } from './types';
 
 const AuthContext = createContext({});

@@ -1,5 +1,5 @@
 import * as admin from 'firebase-admin';
-import { config } from './config/firebase-admin.config';
+import { config } from '../config/firebase-admin.config';
 
 try {
   const { credential, databaseURL } = config;

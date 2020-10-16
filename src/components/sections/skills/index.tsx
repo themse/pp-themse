@@ -1,17 +1,36 @@
 import React from 'react';
-import { SkillItem } from './item';
+import useSWR from 'swr';
+import getConfig from 'next/config';
 
-export type SkillType = {
-  href: string;
-  img: string;
-  title: string;
-};
+import { SkillItem } from './item';
+import { ISkill } from './types';
+
+const {
+  publicRuntimeConfig: { APP_URL },
+} = getConfig();
 
 type SkillsProps = {
-  list?: SkillType[];
+  list?: ISkill[];
 };
 
+//@ts-ignore
+const fetcher = (...args) => fetch(...args).then((res) => res.json()); // TODO move to another file
+
 export const Skills: React.FC<SkillsProps> = ({ list }) => {
+  const { data, error } = useSWR(`${APP_URL}/api/section/skills`, fetcher, {
+    initialData: { skillsList: list },
+  });
+
+  if (error) {
+    return <div>Something went wrong!</div>;
+  }
+
+  if (!data) {
+    return <div>Loading...</div>;
+  }
+
+  const { skillsList } = data;
+
   return (
     <section id="skills" className="skills">
       <div className="container" data-aos="fade-up">
@@ -26,10 +45,10 @@ export const Skills: React.FC<SkillsProps> = ({ list }) => {
         </div>
 
         <div className="row d-flex justify-content-center">
-          {list?.map(({ href, title, img }) => (
-            <div key={title} className="col-lg-2 mb-3">
-              <a href={href} target="_blank">
-                <SkillItem img={img} title={title} />
+          {skillsList?.map((skill: ISkill) => (
+            <div key={skill.id} className="col-lg-2 mb-3">
+              <a href={`https://${skill.href}`} target="_blank">
+                <SkillItem img={skill.img} title={skill.title} />
               </a>
             </div>
           ))}

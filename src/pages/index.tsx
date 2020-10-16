@@ -1,12 +1,12 @@
 import React from 'react';
-import { GetStaticProps } from 'next';
+import { GetServerSidePropsContext } from 'next';
 import getConfig from 'next/config';
 
 import { FrontPage } from '../containers/front-page';
-import { SkillType } from '../components/sections/skills';
+import { ISkill } from '../components/sections/skills/types';
 
 export type FrontPageType = {
-  skillsList?: SkillType[];
+  skillsList?: ISkill[];
 };
 
 const {
@@ -15,12 +15,12 @@ const {
 
 const Page: React.FC<FrontPageType> = (props) => <FrontPage {...props} />;
 
-export const getStaticProps: GetStaticProps<FrontPageType> = async () => {
+export const getServerSideProps = async (_: GetServerSidePropsContext) => {
   const props: FrontPageType = {};
 
   try {
     const res = await fetch(`${APP_URL}/api/section/skills`);
-    const { data: skillsList } = await res.json();
+    const { skillsList } = await res.json();
     props.skillsList = skillsList;
   } catch (error) {
     console.error(error.message);

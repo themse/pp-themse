@@ -2,8 +2,8 @@ import React from 'react';
 import { GetServerSidePropsContext } from 'next';
 import getConfig from 'next/config';
 
-import { FrontPage } from '../containers/front-page';
-import { ISkill } from '../components/sections/skills/types';
+import { FrontPage } from '@/client/containers/front-page';
+import { ISkill } from '@/client/components/sections/skills/types';
 
 export type FrontPageType = {
   skillsList?: ISkill[];

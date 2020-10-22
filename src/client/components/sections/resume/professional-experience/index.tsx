@@ -1,7 +1,6 @@
 import React from 'react';
 import useSWR from 'swr';
 import getConfig from 'next/config';
-import { compareDesc, parseISO } from 'date-fns';
 
 import { ProfessionalExperienceItem, IProfessionalExperience } from './item';
 

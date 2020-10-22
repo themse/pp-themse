@@ -1,9 +1,9 @@
 import React from 'react';
 import { Avatar, Stack, Box } from '@chakra-ui/core';
 
-import { BasicLayout } from '../components/layouts/basic';
-import { IAuth } from '../common/types';
-import { useAuth } from '../common/auth';
+import { BasicLayout } from '@/client/components/layouts/basic';
+import { IAuth } from '@/common/types';
+import { useAuth } from '@/common/auth';
 
 export const SignInPage: React.FC = () => {
   const auth: Partial<IAuth> = useAuth(); // TODO

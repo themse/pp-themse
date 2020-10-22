@@ -1,11 +1,14 @@
 import React from 'react';
-import { BasicLayout } from '../components/layouts/basic';
-import { Summary } from '../components/sections/resume/summary';
-import { ProfessionalExperience } from '../components/sections/resume/professional-experience';
-import { Accomplishments } from '../components/sections/resume/accomplishments';
-import { ResumePageType } from '../pages/resume';
 
-export const ResumePage: React.FC<ResumePageType> = ({ professionalExperiences = [] }) => {
+import { BasicLayout } from '@/client/components/layouts/basic';
+import { Summary } from '@/client/components/sections/resume/summary';
+import { ProfessionalExperience } from '@/client/components/sections/resume/professional-experience';
+import { Accomplishments } from '@/client/components/sections/resume/accomplishments';
+import { ResumePageType } from '@/pages/resume';
+
+export const ResumePage: React.FC<ResumePageType> = ({
+  professionalExperiences = [],
+}) => {
   return (
     <BasicLayout title="Resume">
       <section id="resume" className="resume">

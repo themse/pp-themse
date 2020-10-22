@@ -1,8 +1,8 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import nc from 'next-connect';
 
-import db from '../../../../common/firebase/firebase-admin';
-import { ISkill } from '../../../../components/sections/skills/types';
+import db from '@/common/firebase/firebase-admin';
+import { ISkill } from '@/client/components/sections/skills/types';
 
 const handler = nc().get(async (_: NextApiRequest, res: NextApiResponse) => {
   const skillsRef = db.collection('skills');

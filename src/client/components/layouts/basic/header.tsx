@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-import { Nav } from '../../nav';
+import { Nav } from '@/client/components/nav';
 
 export const Header: React.FC = () => {
   return (

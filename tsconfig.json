@@ -1,5 +1,12 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/pages/*": ["pages/*"],
+      "@/client/*": ["src/client/*"],
+      "@/server/*": ["src/server/*"],
+      "@/common/*": ["src/common/*"]
+    },
     "target": "es5",
     "module": "esnext",
     "jsx": "preserve",

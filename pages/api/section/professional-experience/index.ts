@@ -3,8 +3,8 @@ import cors from 'cors';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { compareDesc } from 'date-fns';
 
-import db from '../../../../common/firebase/firebase-admin';
-import { IProfessionalExperience } from '../../../../components/sections/resume/professional-experience/item';
+import db from '@/common/firebase/firebase-admin';
+import { IProfessionalExperience } from '@/client/components/sections/resume/professional-experience/item';
 
 const handler = nc()
   .use(cors())

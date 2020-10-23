@@ -2,29 +2,23 @@ import React from 'react';
 import useSWR from 'swr';
 import getConfig from 'next/config';
 
-import { ProfessionalExperienceItem, IProfessionalExperience } from './item';
+import { CareerItem, ICareer } from './item';
 
 const {
   publicRuntimeConfig: { APP_URL },
 } = getConfig();
 
-type ProfessionalExperienceProps = {
-  list?: IProfessionalExperience[];
+type CareerProps = {
+  list?: ICareer[];
 };
 
 //@ts-ignore
 const fetcher = (...args) => fetch(...args).then((res) => res.json()); // TODO move to another file
 
-export const ProfessionalExperience: React.FC<ProfessionalExperienceProps> = ({
-  list,
-}) => {
-  const { data, error } = useSWR(
-    `${APP_URL}/api/section/professional-experience`,
-    fetcher,
-    {
-      initialData: { professionalExperiences: list },
-    }
-  );
+export const Career: React.FC<CareerProps> = ({ list }) => {
+  const { data, error } = useSWR(`${APP_URL}/api/career`, fetcher, {
+    initialData: { careerList: list },
+  });
 
   if (error) {
     return <div>Something went wrong!</div>;
@@ -33,13 +27,13 @@ export const ProfessionalExperience: React.FC<ProfessionalExperienceProps> = ({
   if (!data) {
     return <div>Loading...</div>;
   }
-  const { professionalExperiences } = data;
+  const { careerList } = data;
 
   return (
     <>
       <h3 className="resume-title">Professional Experience</h3>
-      {professionalExperiences.map((item: IProfessionalExperience) => (
-        <ProfessionalExperienceItem
+      {careerList?.map((item: ICareer) => (
+        <CareerItem
           key={item.id}
           position={item.position}
           projects={item.projects}

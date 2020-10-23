@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Company, Project } from './types';
 
-export interface IProfessionalExperience {
+export interface ICareer {
   id: string;
   company?: Company;
   position: string;
@@ -11,12 +11,9 @@ export interface IProfessionalExperience {
   to: string;
 }
 
-export type ProfessionalExperienceItemProps = Omit<
-  IProfessionalExperience,
-  'id'
->;
+export type CareerItemProps = Omit<ICareer, 'id'>;
 
-export const ProfessionalExperienceItem: React.FC<ProfessionalExperienceItemProps> = ({
+export const CareerItem: React.FC<CareerItemProps> = ({
   position,
   projects,
   company,

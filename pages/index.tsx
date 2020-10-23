@@ -19,7 +19,7 @@ export const getServerSideProps = async (_: GetServerSidePropsContext) => {
   const props: FrontPageType = {};
 
   try {
-    const res = await fetch(`${APP_URL}/api/section/skills`);
+    const res = await fetch(`${APP_URL}/api/skills`);
     const { skillsList } = await res.json();
     props.skillsList = skillsList;
   } catch (error) {

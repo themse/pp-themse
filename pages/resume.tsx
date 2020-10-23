@@ -3,10 +3,10 @@ import { GetServerSidePropsContext } from 'next';
 import getConfig from 'next/config';
 
 import { ResumePage } from '@/client/containers/resume-page';
-import { IProfessionalExperience } from '@/client/components/sections/resume/professional-experience/item';
+import { ICareer } from '@/client/components/sections/resume/career/item';
 
 export type ResumePageType = {
-  professionalExperiences?: IProfessionalExperience[];
+  careerList?: ICareer[];
 };
 
 const {
@@ -21,9 +21,9 @@ export const getServerSideProps = async (_: GetServerSidePropsContext) => {
   const props: ResumePageType = {};
 
   try {
-    const res = await fetch(`${APP_URL}/api/section/professional-experience`);
-    const { professionalExperiences } = await res.json();
-    props.professionalExperiences = professionalExperiences;
+    const res = await fetch(`${APP_URL}/api/career`);
+    const { careerList } = await res.json();
+    props.careerList = careerList;
   } catch (error) {
     console.error(error.message);
   }

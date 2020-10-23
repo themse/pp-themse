@@ -17,7 +17,7 @@ type SkillsProps = {
 const fetcher = (...args) => fetch(...args).then((res) => res.json()); // TODO move to another file
 
 export const Skills: React.FC<SkillsProps> = ({ list }) => {
-  const { data, error } = useSWR(`${APP_URL}/api/section/skills`, fetcher, {
+  const { data, error } = useSWR(`${APP_URL}/api/skills`, fetcher, {
     initialData: { skillsList: list },
   });
 

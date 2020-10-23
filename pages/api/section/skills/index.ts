@@ -1,23 +1,5 @@
-import { NextApiRequest, NextApiResponse } from 'next';
-import nc from 'next-connect';
+import { ListSkillsController } from '@/server/controllers/skills/list-skills.controller';
 
-import db from '@/common/firebase/firebase-admin';
-import { ISkill } from '@/client/components/sections/skills/types';
+const controller = new ListSkillsController();
 
-const handler = nc().get(async (_: NextApiRequest, res: NextApiResponse) => {
-  const skillsRef = db.collection('skills');
-  const snapshot = await skillsRef.get();
-
-  if (snapshot.empty) {
-    res
-      .status(400)
-      .json({ error: 'Bad Request', message: 'Incorrect document' });
-  }
-
-  const skillsList: ISkill[] = [];
-  // @ts-ignore
-  snapshot.forEach((doc) => skillsList.push({ id: doc.id, ...doc.data() }));
-  res.status(200).json({ skillsList });
-});
-
-export default handler;
+export default controller.execute.bind(controller);

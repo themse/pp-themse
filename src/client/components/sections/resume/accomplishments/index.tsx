@@ -16,7 +16,7 @@ export const Accomplishments: React.FC = () => {
         <h4>Languages</h4>
         <ul>
           <li>English - Intermediate</li>
-          <li>German - Elementary</li>
+          <li>German - Pre-Intermediate</li>
         </ul>
       </div>
     </>

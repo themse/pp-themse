@@ -63,7 +63,7 @@ export const CareerItem: React.FC<CareerItemProps> = ({
               </ul>
             </div>
           )}
-          <hr />
+          <hr style={{ margin: '10px 0' }} />
         </div>
       ))}
     </div>

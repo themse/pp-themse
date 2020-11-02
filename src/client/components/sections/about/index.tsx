@@ -81,11 +81,14 @@ export const About = () => {
                 </ul>
               </div>
             </div>
-            <p className="d-none">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid,
-              molestias reprehenderit, expedita provident quisquam pariatur
-              distinctio ipsa libero dolores quae delectus iure perspiciatis
-              rerum maiores commodi, illum laborum veniam? Id.
+            <p>
+              Competitive and goal-oriented Software Engineer with a strong
+              desire to participate in software development that will benefit of
+              each person. <br />
+              Key area of technical expertise comprises React.js, Redux (saga),
+              GraphQL (Apollo), Typescript, Node.js, Nest.js, Next.js, Postgres
+              and Linux. <br /> Believer and follower of the best IT practices
+              and code quality.
             </p>
           </div>
         </div>
